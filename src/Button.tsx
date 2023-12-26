@@ -4,12 +4,16 @@ import { themes } from './themes'
 
 interface Props {
   title: string;
+  size: string;
   type: string;
   onClick: () => void;
 }
 
-function Button({ title, type, onClick } : Props) {
+function Button({
+  title, size, type, onClick,
+} : Props) {
   const [color, setColor] = useState<string[]>([])
+  const [width, setWidth] = useState<string>('')
 
   useEffect(() => {
     switch (type) {
@@ -33,8 +37,21 @@ function Button({ title, type, onClick } : Props) {
     }
   }, [type])
 
+  useEffect(() => {
+    switch (size) {
+      case 'big':
+        setWidth('358px')
+        return
+      case 'small':
+        setWidth('280px')
+        return
+      default:
+        setWidth('358px')
+    }
+  }, [size])
+
   return (
-    <StyledButton $color={color} onClick={onClick}>
+    <StyledButton $width={width} $color={color} onClick={onClick}>
       {title}
     </StyledButton>
   )
@@ -45,7 +62,10 @@ export default Button
 interface IButton {
   $color: string[]
 }
-const StyledButton = styled.button<IButton>`
+interface IWidth {
+  $width: string
+}
+const StyledButton = styled.button<IButton & IWidth>`
   background-color: ${({ $color }) => $color[0]};
   color: ${({ $color }) => $color[1]};
   border: 1px solid ${({ $color }) => $color[2]};
@@ -53,7 +73,7 @@ const StyledButton = styled.button<IButton>`
   &:hover {
     opacity: 0.8;
   }
-  width: 358px;
+  width: ${({ $width }) => $width};
   height: 48px;
   font-size: 0.875rem;
   font-weight: 600;
