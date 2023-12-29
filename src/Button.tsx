@@ -5,18 +5,18 @@ import { themes } from './themes'
 interface Props {
   title: string;
   size: string;
-  type: string;
+  mode: string;
   onClick: () => void;
 }
 
 function Button({
-  title, size, type, onClick,
+  title, size, mode, onClick,
 } : Props) {
   const [color, setColor] = useState<string[]>([])
   const [width, setWidth] = useState<string>('')
 
   useEffect(() => {
-    switch (type) {
+    switch (mode) {
       case 'lineBlue':
         setColor([themes.colors.white, themes.colors.primary, themes.colors.primary])
         return
@@ -35,15 +35,21 @@ function Button({
       default:
         setColor([themes.colors.white, themes.colors.primary, themes.colors.primary])
     }
-  }, [type])
+  }, [mode])
 
   useEffect(() => {
     switch (size) {
       case 'big':
         setWidth('358px')
         return
-      case 'small':
+      case 'middle':
         setWidth('280px')
+        return
+      case 'small':
+        setWidth('160px')
+        return
+      case 'extraSmall':
+        setWidth('131px')
         return
       default:
         setWidth('358px')

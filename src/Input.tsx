@@ -4,18 +4,18 @@ import { themes } from './themes'
 
 interface Props {
   type: string;
-  colorType: string;
+  mode: string;
   placeholder: string;
   onChange: () => void;
 }
 
 function Input({
-  type, colorType, placeholder, onChange,
+  type, mode, placeholder, onChange,
 } : Props) {
   const [color, setColor] = useState<string[]>([])
 
   useEffect(() => {
-    switch (colorType) {
+    switch (mode) {
       case 'blue':
         setColor([themes.colors.white, themes.colors.primary])
         return
@@ -31,7 +31,7 @@ function Input({
       default:
         setColor([themes.colors.white, themes.colors.primary])
     }
-  }, [colorType])
+  }, [mode])
 
   return (
     <StyledInput $color={color} type={type} onChange={onChange} placeholder={placeholder} />

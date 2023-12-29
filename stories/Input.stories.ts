@@ -1,7 +1,7 @@
 import Input from '../src/Input'
 
 export default {
-  title: 'BaseStyle/Input',
+  title: 'BasicStyle/Input',
   component: Input,
   tags: ['autodocs'],
 }
@@ -9,12 +9,13 @@ export default {
 export const Primary = {
   args: {
     type: 'text',
-    colorType: 'blue',
+    mode: 'blue',
     placeholder: '타이틀',
+    // eslint-disable-next-line no-console
     onChange: (e) => console.log(e.target.value),
   },
   argTypes: {
-    colorType: {
+    mode: {
       options: ['blue', 'red', 'gray', 'gray2'],
       control: { type: 'radio' },
     },
