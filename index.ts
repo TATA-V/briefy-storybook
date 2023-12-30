@@ -1,5 +1,5 @@
-import Button from './src/Button'
-import Input from './src/Input'
+import Button from './src/components/Button'
+import Input from './src/components/Input'
 
 export {
   Button,

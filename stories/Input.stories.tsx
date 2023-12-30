@@ -1,4 +1,4 @@
-import Input from '../src/Input'
+import Input from '../src/components/Input'
 
 export default {
   title: 'BasicStyle/Input',
