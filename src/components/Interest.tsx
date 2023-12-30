@@ -66,12 +66,12 @@ function Interest({ title, onClick } : Props) {
 
   return (
     <StyledLi $clicked={clicked} onClick={handleClick}>
-      <Icon $clicked={clicked}>
+      <div className="interest-icon">
         {icon}
-      </Icon>
-      <Title $clicked={clicked}>
+      </div>
+      <span className="interest-title">
         {title}
-      </Title>
+      </span>
     </StyledLi>
   )
 }
@@ -97,15 +97,17 @@ const StyledLi = styled.li<IClicked>`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`
-const Icon = styled.div<IClicked>`
-  color: ${({ $clicked }) => ($clicked ? 'white' : 'var(--black-300)')};
-  width: 40px;
-  height: 40px;
-`
-const Title = styled.div<IClicked>`
-  color: ${({ $clicked }) => ($clicked ? 'white' : 'var(--black-500)')};
-  font-size: 0.875rem;
-  font-weight: normal;
-  padding-top: 12px;
+
+  .interest-icon {
+    color: ${({ $clicked }) => ($clicked ? 'white' : 'var(--black-300)')};
+    width: 40px;
+    height: 40px;
+  }
+
+  .interest-title {
+    color: ${({ $clicked }) => ($clicked ? 'white' : 'var(--black-500)')};
+    font-size: 0.875rem;
+    font-weight: normal;
+    padding-top: 12px;
+  }
 `
