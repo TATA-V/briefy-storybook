@@ -9,7 +9,7 @@ npm i briefy-storybook
 
 ### Usage
 
-```jsx
+```jsxks
 import { Button } from 'briefy-storybook'
 
 function MainPage() {
