@@ -1,0 +1,48 @@
+name: Publish storybook
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.gitignore'
+      - '.npmignore'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+        
+      - name: global config
+        run: |
+          git config --global user.email "tatahyeonv@gmail.com"
+          git config --global user.name "tata-v"
+
+      - name: auto version update
+        run: |
+          npm version patch
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_author: Actions Bot <actions@github.com>
+          commit_message: 'chore(package.json): update version'
+
+      - name: Build
+        run: |-
+          npm i -g pnpm
+          pnpm i
+          pnpm build
+          pnpm tsc-build
+    
+      - name: Publish to NPM
+        run: |
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
