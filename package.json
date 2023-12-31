@@ -1,6 +1,6 @@
 {
   "name": "briefy-storybook",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,13 +10,13 @@
     "tsc-build": "tsc -p tsconfig.json"
   },
   "keywords": [],
-  "author": {                        
-    "name": "tata-v",                
-    "email": "tatahyeonv@gmail.com" 
+  "author": {
+    "name": "tata-v",
+    "email": "tatahyeonv@gmail.com"
   },
-  "publishConfig": {           
-    "access": "public",        
-    "registry": "https://registry.npmjs.org/"  
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "license": "ISC",
   "devDependencies": {
