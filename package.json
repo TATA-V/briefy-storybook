@@ -6,10 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "storybook dev -p 6006",
-    "build": "storybook build"
+    "build": "storybook build",
+    "tsc-build": "tsc -p tsconfig.json"
   },
   "keywords": [],
-  "author": "",
+  "author": {                        
+    "name": "tata-v",                
+    "email": "tatahyeonv@gmail.com" 
+  },
+  "publishConfig": {           
+    "access": "public",        
+    "registry": "https://registry.npmjs.org/"  
+  },
   "license": "ISC",
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.6",
