@@ -22,7 +22,7 @@ function ArticleCard(props : Props) {
     <StyledLi $mode={mode}>
       <ImageContainer onClick={onClick} $percent={percent} $mode={mode}>
         <div className="image-box">
-          <img className="image" src={src} alt="article-img" />
+          <img className="image" src={src} alt="article-img" loading="lazy" />
         </div>
         {mode === 'reading' && (
           <div className="progress-box">
@@ -32,10 +32,10 @@ function ArticleCard(props : Props) {
       </ImageContainer>
       <div>
         <p className="category">{category[0]}<span className="text-line">|</span>{category[1]}</p>
-        <div onClick={onClick} className="title">
+        <h3 onClick={onClick} className="title">
           {title}
-        </div>
-        <div className="date">11월 4일</div>
+        </h3>
+        <p className="date">11월 4일</p>
       </div>
       {mode === 'read' && <ReadBg />}
     </StyledLi>

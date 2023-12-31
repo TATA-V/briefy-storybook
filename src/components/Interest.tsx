@@ -78,10 +78,7 @@ function Interest({ title, onClick } : Props) {
 
 export default Interest
 
-interface IClicked {
-  $clicked: boolean;
-}
-const StyledLi = styled.li<IClicked>`
+const StyledLi = styled.li<{ $clicked: boolean; }>`
   background-color: ${({ $clicked }) => ($clicked ? 'var(--primary)' : 'var(--black-100)')};
   
   &:hover {

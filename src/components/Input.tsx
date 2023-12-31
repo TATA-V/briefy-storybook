@@ -40,10 +40,7 @@ function Input({
 
 export default Input
 
-interface IColor {
-  $color: string[]
-}
-const StyledInput = styled.input<IColor>`
+const StyledInput = styled.input<{ $color: string[] }>`
   border: 1px solid ${({ $color }) => $color[1]};
   caret-color: ${({ $color }) => $color[1]};
   background-color: ${({ $color }) => $color[0]};

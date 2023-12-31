@@ -65,13 +65,7 @@ function Button({
 
 export default Button
 
-interface IButton {
-  $color: string[]
-}
-interface IWidth {
-  $width: string
-}
-const StyledButton = styled.button<IButton & IWidth>`
+const StyledButton = styled.button<{ $color: string[]; $width: string; }>`
   background-color: ${({ $color }) => $color[0]};
   color: ${({ $color }) => $color[1]};
   border: 1px solid ${({ $color }) => $color[2]};
