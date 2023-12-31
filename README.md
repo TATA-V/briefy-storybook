@@ -1,6 +1,6 @@
 # briefy storybook
 
-🔗 _**<a href="https://briefy-storybook.vercel.app">storybook 배포 링크</a>**_
+🔗 _**<a href="https://briefy-storybook.vercel.app">storybook deploy link</a>**_
 
 ## Installation
 ```bash
