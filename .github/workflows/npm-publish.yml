@@ -20,7 +20,13 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-           
+
+      - name: Build
+        run: |-
+          pnpm i
+          pnpm build
+          pnpm tsc-build
+
       - name: auto version update
         run: |
           npm version patch
