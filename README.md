@@ -9,7 +9,7 @@ npm i briefy-ui
 
 ## Usage
 
-```jsxks
+```jsx
 import { Button } from 'briefy-ui'
 
 function MainPage() {
