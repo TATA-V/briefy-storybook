@@ -1,16 +1,16 @@
-## briefy storybook
+# briefy storybook
 
 🔗 _**<a href="https://briefy-storybook.vercel.app">storybook deploy link</a>**_
 
-### Installation
+## Installation
 ```bash
-npm i briefy-storybook
+npm i briefy-ui
 ```
 
-### Usage
+## Usage
 
 ```jsxks
-import { Button } from 'briefy-storybook'
+import { Button } from 'briefy-ui'
 
 function MainPage() {
   return (
