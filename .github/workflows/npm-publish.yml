@@ -26,8 +26,7 @@ jobs:
           npm i -g pnpm
           pnpm i
           pnpm build
-          pnpm tsc-build
-
+        
       - name: global config
         run: |
           git config --global user.email "tatahyeonv@gmail.com"
