@@ -28,6 +28,11 @@ jobs:
           pnpm build
           pnpm tsc-build
 
+      - name: global config
+        run: |
+          git config --global user.email "tatahyeonv@gmail.com"
+          git config --global user.name "tata-v"
+
       - name: auto version update
         run: |
           npm version patch
