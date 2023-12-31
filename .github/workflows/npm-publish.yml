@@ -36,8 +36,6 @@ jobs:
       - name: auto version update
         run: |
           npm version patch
-          git add .
-          git commit -m "chore: version update"
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_author: Actions Bot <actions@github.com>
