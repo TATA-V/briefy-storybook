@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, ChangeEvent } from 'react'
 import styled from 'styled-components'
 import { themes } from '../themes'
 
@@ -6,7 +6,7 @@ interface Props {
   type: string;
   mode: string;
   placeholder: string;
-  onChange: () => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 function Input({
