@@ -4,13 +4,13 @@
 
 ## Installation
 ```bash
-npm i briefy-ui
+npm i briefy-design
 ```
 
 ## Usage
 
 ```jsx
-import { Button } from 'briefy-ui'
+import { Button } from 'briefy-design'
 
 function MainPage() {
   return (
