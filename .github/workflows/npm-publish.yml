@@ -23,6 +23,7 @@ jobs:
 
       - name: Build
         run: |-
+          npm i -g pnpm
           pnpm i
           pnpm build
           pnpm tsc-build
