@@ -35,6 +35,8 @@ jobs:
 
       - name: auto version update
         run: |
+          git add .
+          git commit -m "chore: commit changes before version patch"
           npm version patch
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
