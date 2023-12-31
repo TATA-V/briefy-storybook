@@ -20,13 +20,6 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-
-      - name: Build
-        run: |-
-          npm i -g pnpm
-          pnpm i
-          pnpm build
-          pnpm tsc-build
         
       - name: global config
         run: |
@@ -35,13 +28,18 @@ jobs:
 
       - name: auto version update
         run: |
-          git add .
-          git commit -m "chore: commit changes before version patch"
           npm version patch
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_author: Actions Bot <actions@github.com>
           commit_message: 'chore(package.json): update version'
+
+      - name: Build
+        run: |-
+          npm i -g pnpm
+          pnpm i
+          pnpm build
+          pnpm tsc-build
     
       - name: Publish to NPM
         run: |
