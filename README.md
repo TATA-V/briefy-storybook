@@ -4,7 +4,7 @@
 
 ## Installation
 ```bash
-npm i briefy-design
+npm i -D briefy-design
 ```
 
 ## Usage

@@ -12,6 +12,16 @@ const preview = {
         date: /Date$/i,
       },
     },
+    options: {
+      storySort: {
+        order: [
+          'BasicStyle',
+          ['Button', 'Input', 'Interest'],
+          'CardStyle',
+          ['ArticleCard', 'NewsLetterCard'],
+        ],
+      },
+    },
   },
 };
 
