@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 interface Props {
   title: string;
@@ -20,10 +20,10 @@ function NewsLetterCard({
         <p className="description">{description}</p>
       </Content>
     </NewsLetterCardBlock>
-  )
+  );
 }
 
-export default NewsLetterCard
+export default NewsLetterCard;
 
 const NewsLetterCardBlock = styled.div`
   width: 384px;
@@ -33,7 +33,7 @@ const NewsLetterCardBlock = styled.div`
   padding: 16px;
   display: flex;
   align-items: center;
-`
+`;
 const ImageContainer = styled.div`
   width: 124px;
   height: 124px;
@@ -49,7 +49,7 @@ const ImageContainer = styled.div`
       transform: scale(1.1);
     }
   }
-`
+`;
 const Content = styled.div`
   width: 216px;
   padding-left: 12px;
@@ -81,4 +81,4 @@ const Content = styled.div`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
-`
+`;

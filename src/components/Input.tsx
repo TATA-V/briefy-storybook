@@ -1,6 +1,6 @@
-import { useEffect, useState, ChangeEvent } from 'react'
-import styled from 'styled-components'
-import { themes } from '../themes'
+import { useEffect, useState, ChangeEvent } from 'react';
+import styled from 'styled-components';
+import { themes } from '../themes';
 
 interface Props {
   type: string;
@@ -12,33 +12,33 @@ interface Props {
 function Input({
   type, mode, placeholder, onChange,
 } : Props) {
-  const [color, setColor] = useState<string[]>([])
+  const [color, setColor] = useState<string[]>([]);
 
   useEffect(() => {
     switch (mode) {
       case 'blue':
-        setColor([themes.colors.white, themes.colors.primary])
-        return
+        setColor([themes.colors.white, themes.colors.primary]);
+        return;
       case 'red':
-        setColor([themes.colors.white, themes.colors.warning])
-        return
+        setColor([themes.colors.white, themes.colors.warning]);
+        return;
       case 'gray':
-        setColor([themes.colors.white, themes.colors.black300])
-        return
+        setColor([themes.colors.white, themes.colors.black300]);
+        return;
       case 'gray2':
-        setColor([themes.colors.black100, themes.colors.black300])
-        return
+        setColor([themes.colors.black100, themes.colors.black300]);
+        return;
       default:
-        setColor([themes.colors.white, themes.colors.primary])
+        setColor([themes.colors.white, themes.colors.primary]);
     }
-  }, [mode])
+  }, [mode]);
 
   return (
     <StyledInput $color={color} type={type} onChange={onChange} placeholder={placeholder} />
-  )
+  );
 }
 
-export default Input
+export default Input;
 
 const StyledInput = styled.input<{ $color: string[] }>`
   border: 1px solid ${({ $color }) => $color[1]};
@@ -57,4 +57,4 @@ const StyledInput = styled.input<{ $color: string[] }>`
   &::placeholder {
     color: #B3B4B9;
   }
-`
+`;

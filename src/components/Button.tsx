@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
-import styled from 'styled-components'
-import { themes } from '../themes'
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { themes } from '../themes';
 
 interface Props {
   title: string;
@@ -12,58 +12,58 @@ interface Props {
 function Button({
   title, size, mode, onClick,
 } : Props) {
-  const [color, setColor] = useState<string[]>([])
-  const [width, setWidth] = useState<string>('')
+  const [color, setColor] = useState<string[]>([]);
+  const [width, setWidth] = useState<string>('');
 
   useEffect(() => {
     switch (mode) {
       case 'lineBlue':
-        setColor([themes.colors.white, themes.colors.primary, themes.colors.primary])
-        return
+        setColor([themes.colors.white, themes.colors.primary, themes.colors.primary]);
+        return;
       case 'lineBlack':
-        setColor([themes.colors.white, themes.colors.black900, themes.colors.black900])
-        return
+        setColor([themes.colors.white, themes.colors.black900, themes.colors.black900]);
+        return;
       case 'blue':
-        setColor([themes.colors.primary, themes.colors.white, themes.colors.primary])
-        return
+        setColor([themes.colors.primary, themes.colors.white, themes.colors.primary]);
+        return;
       case 'black':
-        setColor([themes.colors.black900, themes.colors.white, themes.colors.black900])
-        return
+        setColor([themes.colors.black900, themes.colors.white, themes.colors.black900]);
+        return;
       case 'disabled':
-        setColor([themes.colors.black100, themes.colors.black300, themes.colors.black300])
-        return
+        setColor([themes.colors.black100, themes.colors.black300, themes.colors.black300]);
+        return;
       default:
-        setColor([themes.colors.white, themes.colors.primary, themes.colors.primary])
+        setColor([themes.colors.white, themes.colors.primary, themes.colors.primary]);
     }
-  }, [mode])
+  }, [mode]);
 
   useEffect(() => {
     switch (size) {
       case 'big':
-        setWidth('358px')
-        return
+        setWidth('358px');
+        return;
       case 'middle':
-        setWidth('280px')
-        return
+        setWidth('280px');
+        return;
       case 'small':
-        setWidth('160px')
-        return
+        setWidth('160px');
+        return;
       case 'extraSmall':
-        setWidth('131px')
-        return
+        setWidth('131px');
+        return;
       default:
-        setWidth('358px')
+        setWidth('358px');
     }
-  }, [size])
+  }, [size]);
 
   return (
     <StyledButton $width={width} $color={color} onClick={onClick}>
       {title}
     </StyledButton>
-  )
+  );
 }
 
-export default Button
+export default Button;
 
 const StyledButton = styled.button<{ $color: string[]; $width: string; }>`
   background-color: ${({ $color }) => $color[0]};
@@ -82,4 +82,4 @@ const StyledButton = styled.button<{ $color: string[]; $width: string; }>`
   flex: 1;
   justify-content: center;
   align-items: center;
-`
+`;

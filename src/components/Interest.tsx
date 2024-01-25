@@ -1,17 +1,17 @@
 import {
   useEffect, useState, ReactNode,
-} from 'react'
-import styled from 'styled-components'
-import BusinessIcon from '../assets/icons/BusinessIcon'
-import TechniqueIcon from '../assets/icons/TechniqueIcon'
-import HealthIcon from '../assets/icons/HealthIcon'
-import EntertainmentIcon from '../assets/icons/EntertainmentIcon'
-import SportsIcon from '../assets/icons/SportsIcon'
-import EnvironmentIcon from '../assets/icons/EnvironmentIcon'
-import ScienceIcon from '../assets/icons/ScienceIcon'
-import TravelIcon from '../assets/icons/TravelIcon'
-import MediaIcon from '../assets/icons/MediaIcon'
-import FoodIcon from '../assets/icons/FoodIcon'
+} from 'react';
+import styled from 'styled-components';
+import BusinessIcon from '../assets/icons/BusinessIcon';
+import TechniqueIcon from '../assets/icons/TechniqueIcon';
+import HealthIcon from '../assets/icons/HealthIcon';
+import EntertainmentIcon from '../assets/icons/EntertainmentIcon';
+import SportsIcon from '../assets/icons/SportsIcon';
+import EnvironmentIcon from '../assets/icons/EnvironmentIcon';
+import ScienceIcon from '../assets/icons/ScienceIcon';
+import TravelIcon from '../assets/icons/TravelIcon';
+import MediaIcon from '../assets/icons/MediaIcon';
+import FoodIcon from '../assets/icons/FoodIcon';
 
 interface Props {
   title: string;
@@ -19,50 +19,50 @@ interface Props {
 }
 
 function Interest({ title, onClick } : Props) {
-  const [icon, setIcon] = useState<ReactNode>()
-  const [clicked, setClicked] = useState<boolean>(false)
+  const [icon, setIcon] = useState<ReactNode>();
+  const [clicked, setClicked] = useState<boolean>(false);
 
   useEffect(() => {
     switch (title) {
       case '비지니스':
-        setIcon(<BusinessIcon />)
-        return
+        setIcon(<BusinessIcon />);
+        return;
       case '기술':
-        setIcon(<TechniqueIcon />)
-        return
+        setIcon(<TechniqueIcon />);
+        return;
       case '건강':
-        setIcon(<HealthIcon />)
-        return
+        setIcon(<HealthIcon />);
+        return;
       case '엔터테이먼트':
-        setIcon(<EntertainmentIcon />)
-        return
+        setIcon(<EntertainmentIcon />);
+        return;
       case '스포츠':
-        setIcon(<SportsIcon />)
-        return
+        setIcon(<SportsIcon />);
+        return;
       case '환경':
-        setIcon(<EnvironmentIcon />)
-        return
+        setIcon(<EnvironmentIcon />);
+        return;
       case '과학':
-        setIcon(<ScienceIcon />)
-        return
+        setIcon(<ScienceIcon />);
+        return;
       case '여행':
-        setIcon(<TravelIcon />)
-        return
+        setIcon(<TravelIcon />);
+        return;
       case '미디어':
-        setIcon(<MediaIcon />)
-        return
+        setIcon(<MediaIcon />);
+        return;
       case '푸드':
-        setIcon(<FoodIcon />)
-        return
+        setIcon(<FoodIcon />);
+        return;
       default:
-        setIcon(<BusinessIcon />)
+        setIcon(<BusinessIcon />);
     }
-  }, [title])
+  }, [title]);
 
   const handleClick = () => {
-    setClicked(!clicked)
-    onClick(title)
-  }
+    setClicked(!clicked);
+    onClick(title);
+  };
 
   return (
     <StyledLi $clicked={clicked} onClick={handleClick}>
@@ -73,10 +73,10 @@ function Interest({ title, onClick } : Props) {
         {title}
       </span>
     </StyledLi>
-  )
+  );
 }
 
-export default Interest
+export default Interest;
 
 const StyledLi = styled.li<{ $clicked: boolean; }>`
   background-color: ${({ $clicked }) => ($clicked ? 'var(--primary)' : 'var(--black-100)')};
@@ -107,4 +107,4 @@ const StyledLi = styled.li<{ $clicked: boolean; }>`
     font-weight: normal;
     padding-top: 12px;
   }
-`
+`;

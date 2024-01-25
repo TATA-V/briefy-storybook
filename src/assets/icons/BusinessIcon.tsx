@@ -13,7 +13,7 @@ function BusinessIcon() {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
-export default BusinessIcon
+export default BusinessIcon;

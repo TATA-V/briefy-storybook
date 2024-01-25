@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 interface Props {
   data: {
@@ -12,10 +12,10 @@ interface Props {
 }
 
 function ArticleCard(props : Props) {
-  const { data, mode, onClick } = props
+  const { data, mode, onClick } = props;
   const {
     category, title, src, percent,
-  } = data
+  } = data;
 
   return (
     <StyledLi $mode={mode}>
@@ -38,10 +38,10 @@ function ArticleCard(props : Props) {
       </div>
       {mode === 'read' && <ReadBg />}
     </StyledLi>
-  )
+  );
 }
 
-export default ArticleCard
+export default ArticleCard;
 
 const StyledLi = styled.li<{ $mode: string }>`
   width: 282px;
@@ -90,7 +90,7 @@ const StyledLi = styled.li<{ $mode: string }>`
     font-weight: 300;
     padding-top: 14px;
   }
-`
+`;
 
 const ImageContainer = styled.div<{ $percent?: string, $mode: string }>`
   position: relative;
@@ -130,7 +130,7 @@ const ImageContainer = styled.div<{ $percent?: string, $mode: string }>`
     height: 8px;
     background-color: var(--primary)
   }
-`
+`;
 
 const ReadBg = styled.div`
   position: absolute;
@@ -140,4 +140,4 @@ const ReadBg = styled.div`
   height: 100%;
   border-radius: 19px;
   background-color: rgba(0, 0, 0, 0.08);
-`
+`;
