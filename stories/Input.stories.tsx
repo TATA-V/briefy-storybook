@@ -1,11 +1,11 @@
-import { ChangeEvent } from 'react'
-import Input from '../src/components/Input'
+import { ChangeEvent } from 'react';
+import Input from '../src/components/Input';
 
 export default {
   title: 'BasicStyle/Input',
   component: Input,
   tags: ['autodocs'],
-}
+};
 
 export const Primary = {
   args: {
@@ -21,4 +21,4 @@ export const Primary = {
       control: { type: 'radio' },
     },
   },
-}
+};

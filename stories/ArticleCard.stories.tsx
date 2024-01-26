@@ -1,10 +1,10 @@
-import ArticleCard from '../src/components/ArticleCard'
+import ArticleCard from '../src/components/ArticleCard';
 
 export default {
   title: 'CardStyle/ArticleCard',
   component: ArticleCard,
   tags: ['autodocs'],
-}
+};
 
 export const Primary = {
   args: {
@@ -23,4 +23,4 @@ export const Primary = {
       control: { type: 'radio' },
     },
   },
-}
+};

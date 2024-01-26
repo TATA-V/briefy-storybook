@@ -14,27 +14,29 @@ function Button({
 } : Props) {
   const [color, setColor] = useState<string[]>([]);
   const [width, setWidth] = useState<string>('');
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
     switch (mode) {
       case 'lineBlue':
         setColor([themes.colors.white, themes.colors.primary, themes.colors.primary]);
-        return;
+        break;
       case 'lineBlack':
         setColor([themes.colors.white, themes.colors.black900, themes.colors.black900]);
-        return;
+        break;
       case 'blue':
         setColor([themes.colors.primary, themes.colors.white, themes.colors.primary]);
-        return;
+        break;
       case 'black':
         setColor([themes.colors.black900, themes.colors.white, themes.colors.black900]);
-        return;
+        break;
       case 'disabled':
         setColor([themes.colors.black100, themes.colors.black300, themes.colors.black300]);
-        return;
+        break;
       default:
         setColor([themes.colors.white, themes.colors.primary, themes.colors.primary]);
     }
+    setIsVisible(true);
   }, [mode]);
 
   useEffect(() => {
@@ -57,9 +59,13 @@ function Button({
   }, [size]);
 
   return (
-    <StyledButton $width={width} $color={color} onClick={onClick}>
-      {title}
-    </StyledButton>
+    <>
+      {isVisible && (
+        <StyledButton disabled={mode === 'disabled'} $width={width} $color={color} onClick={onClick}>
+          {title}
+        </StyledButton>
+      )}
+    </>
   );
 }
 

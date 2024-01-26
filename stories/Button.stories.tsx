@@ -1,16 +1,16 @@
-import Button from '../src/components/Button'
+import Button from '../src/components/Button';
 
 export default {
   title: 'BasicStyle/Button',
   component: Button,
   tags: ['autodocs'],
-}
+};
 
 export const Primary = {
   args: {
     title: 'button',
     size: 'big',
-    mode: 'lineBlue',
+    mode: 'blue',
     onClick: () => alert('클릭!'),
   },
   argTypes: {
@@ -23,4 +23,4 @@ export const Primary = {
       control: { type: 'radio' },
     },
   },
-}
+};

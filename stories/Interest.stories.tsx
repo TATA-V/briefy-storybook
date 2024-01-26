@@ -1,10 +1,10 @@
-import Interest from '../src/components/Interest'
+import Interest from '../src/components/Interest';
 
 export default {
   title: 'BasicStyle/Interest',
   component: Interest,
   tags: ['autodocs'],
-}
+};
 
 export const Primary = {
   args: {
@@ -18,4 +18,4 @@ export const Primary = {
       control: { type: 'radio' },
     },
   },
-}
+};
