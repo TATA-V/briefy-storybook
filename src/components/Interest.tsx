@@ -107,4 +107,19 @@ const StyledLi = styled.li<{ $clicked: boolean; }>`
     font-weight: normal;
     padding-top: 12px;
   }
+
+  @media all and (max-width: 640px) {
+    width: 80px;
+    height: 80px;
+
+    .interest-icon {
+      width: 24px;
+    height: 24px;
+    }
+
+    .interest-title {
+      font-size: 0.75rem;
+      padding-top: 4px;
+    }
+  }
 `;

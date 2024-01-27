@@ -88,4 +88,8 @@ const StyledButton = styled.button<{ $color: string[]; $width: string; }>`
   flex: 1;
   justify-content: center;
   align-items: center;
+
+  @media all and (max-width: 640px) {
+    width: 100%;
+  }
 `;

@@ -9,7 +9,7 @@ npm i -D briefy-design
 
 ## Usage
 
-_**Button**_
+**Button**
 
 ```jsx
 import { Button } from 'briefy-design'
@@ -26,7 +26,7 @@ function MainPage() {
 }
 ```
 
-_**Input**_
+**Input**
 
 ```jsx
 import { Input } from 'briefy-design'
@@ -43,7 +43,7 @@ function MainPage() {
 }
 ```
 
-_**Interest**_
+**Interest**
 
 ```jsx
 import { Interest } from 'briefy-design'
@@ -55,7 +55,7 @@ function MainPage() {
 }
 ```
 
-_**ArticleCard**_
+**ArticleCard**
 
 ```jsx
 import { ArticleCard } from 'briefy-design'
@@ -76,7 +76,7 @@ function MainPage() {
 }
 ```
 
-_**NewsLetterCard**_
+**NewsLetterCard**
 
 ```jsx
 import { NewsLetterCard } from 'briefy-design'
