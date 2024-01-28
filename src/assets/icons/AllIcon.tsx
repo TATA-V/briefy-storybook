@@ -15,7 +15,7 @@ function AllIcon() {
         clipRule="evenodd"
       />
     </svg>
-  )
+  );
 }
 
-export default AllIcon
+export default AllIcon;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { themes } from '../themes';
 
@@ -7,10 +7,14 @@ interface Props {
   size: string;
   mode: string;
   onClick: () => void;
+  // eslint-disable-next-line react/require-default-props
+  fontSize?: string;
+  // eslint-disable-next-line react/require-default-props
+  children?: ReactNode;
 }
 
 function Button({
-  title, size, mode, onClick,
+  title, size, mode, onClick, fontSize = '0.875rem', children,
 } : Props) {
   const [color, setColor] = useState<string[]>([]);
   const [width, setWidth] = useState<string>('');
@@ -61,8 +65,9 @@ function Button({
   return (
     <>
       {isVisible && (
-        <StyledButton disabled={mode === 'disabled'} $width={width} $color={color} onClick={onClick}>
+        <StyledButton disabled={mode === 'disabled'} $width={width} $color={color} $fontSize={fontSize} onClick={onClick}>
           {title}
+          {children}
         </StyledButton>
       )}
     </>
@@ -71,7 +76,7 @@ function Button({
 
 export default Button;
 
-const StyledButton = styled.button<{ $color: string[]; $width: string; }>`
+const StyledButton = styled.button<{ $color: string[]; $width: string; $fontSize: string; }>`
   background-color: ${({ $color }) => $color[0]};
   color: ${({ $color }) => $color[1]};
   border: 1px solid ${({ $color }) => $color[2]};
@@ -81,10 +86,11 @@ const StyledButton = styled.button<{ $color: string[]; $width: string; }>`
   }
   width: ${({ $width }) => $width};
   height: 48px;
-  font-size: 0.875rem;
+  font-size: ${({ $fontSize }) => $fontSize};
   font-weight: 600;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
+  display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
