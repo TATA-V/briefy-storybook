@@ -8,13 +8,11 @@ interface Props {
   mode: string;
   onClick: () => void;
   // eslint-disable-next-line react/require-default-props
-  fontSize?: string;
-  // eslint-disable-next-line react/require-default-props
   children?: ReactNode;
 }
 
 function Button({
-  title, size, mode, onClick, fontSize = '0.875rem', children,
+  title, size, mode, onClick, children,
 } : Props) {
   const [color, setColor] = useState<string[]>([]);
   const [width, setWidth] = useState<string>('');
@@ -65,7 +63,12 @@ function Button({
   return (
     <>
       {isVisible && (
-        <StyledButton disabled={mode === 'disabled'} $width={width} $color={color} $fontSize={fontSize} onClick={onClick}>
+        <StyledButton
+          disabled={mode === 'disabled'}
+          $width={width}
+          $color={color}
+          onClick={onClick}
+        >
           {title}
           {children}
         </StyledButton>
@@ -76,7 +79,7 @@ function Button({
 
 export default Button;
 
-const StyledButton = styled.button<{ $color: string[]; $width: string; $fontSize: string; }>`
+const StyledButton = styled.button<{ $color: string[]; $width: string; }>`
   background-color: ${({ $color }) => $color[0]};
   color: ${({ $color }) => $color[1]};
   border: 1px solid ${({ $color }) => $color[2]};
@@ -86,7 +89,7 @@ const StyledButton = styled.button<{ $color: string[]; $width: string; $fontSize
   }
   width: ${({ $width }) => $width};
   height: 48px;
-  font-size: ${({ $fontSize }) => $fontSize};
+  font-size: 0.875rem;
   font-weight: 600;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
@@ -95,7 +98,8 @@ const StyledButton = styled.button<{ $color: string[]; $width: string; $fontSize
   justify-content: center;
   align-items: center;
 
-  @media all and (max-width: 640px) {
+  @media all and (max-width: 767px) {
     width: 100%;
+    height: 32px;
   }
 `;
