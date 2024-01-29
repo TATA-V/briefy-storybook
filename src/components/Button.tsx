@@ -8,11 +8,12 @@ interface Props {
   mode: string;
   onClick: () => void;
   // eslint-disable-next-line react/require-default-props
+  fontSize?: string;
   children?: ReactNode;
 }
 
 function Button({
-  title, size, mode, onClick, children,
+  title, size, mode, onClick, fontSize = '0.875rem', children,
 } : Props) {
   const [color, setColor] = useState<string[]>([]);
   const [width, setWidth] = useState<string>('');
@@ -67,6 +68,7 @@ function Button({
           disabled={mode === 'disabled'}
           $width={width}
           $color={color}
+          $fontSize={fontSize}
           onClick={onClick}
         >
           {title}
@@ -79,7 +81,7 @@ function Button({
 
 export default Button;
 
-const StyledButton = styled.button<{ $color: string[]; $width: string; }>`
+const StyledButton = styled.button<{ $color: string[]; $width: string; $fontSize: string; }>`
   background-color: ${({ $color }) => $color[0]};
   color: ${({ $color }) => $color[1]};
   border: 1px solid ${({ $color }) => $color[2]};
@@ -89,7 +91,7 @@ const StyledButton = styled.button<{ $color: string[]; $width: string; }>`
   }
   width: ${({ $width }) => $width};
   height: 48px;
-  font-size: 0.875rem;
+  font-size: ${({ $fontSize }) => $fontSize};
   font-weight: 600;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
