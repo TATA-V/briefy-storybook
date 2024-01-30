@@ -26,22 +26,30 @@ function NewsLetterCard({
 export default NewsLetterCard;
 
 const NewsLetterCardBlock = styled.div`
-  width: 384px;
+  max-width: 384px;
+  width: 100%;
   height: 156px;
   border-radius: 20px;
   border: 1px solid var(--black-300);
   padding: 16px;
   display: flex;
   align-items: center;
+
+  @media all and (max-width: 767px) {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    padding: 10px;
+  }
 `;
 const ImageContainer = styled.div`
-  width: 124px;
+  min-width: 124px;
   height: 124px;
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
   img {
-    width: 124px;
+    min-width: 124px;
     height: 124px;
     object-fit: cover;
     transition: all 0.2s ease-in-out;
@@ -49,9 +57,19 @@ const ImageContainer = styled.div`
       transform: scale(1.1);
     }
   }
+
+  @media all and (max-width: 767px) {
+    min-width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    img {
+      min-width: 80px;
+      height: 80px;
+    }
+  }
 `;
 const Content = styled.div`
-  width: 216px;
+  width: 100%;
   padding-left: 12px;
   cursor: pointer;
   .title {
@@ -80,5 +98,22 @@ const Content = styled.div`
     height: 2.5rem;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+  }
+
+  @media all and (max-width: 767px) {
+    width: 100%;
+    padding-left: 8px;
+    .title {
+      font-size: 0.875rem;
+    }
+    .category {
+      font-size: 0.75rem;
+      margin: 0px 0 5px 0;
+    }
+    .description {
+      height: 32px;
+      line-height: 1rem;
+      font-size: 0.7rem;
+    }
   }
 `;

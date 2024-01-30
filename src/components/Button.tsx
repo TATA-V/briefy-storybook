@@ -9,11 +9,16 @@ interface Props {
   onClick: () => void;
   // eslint-disable-next-line react/require-default-props
   fontSize?: string;
+  // eslint-disable-next-line react/require-default-props
   children?: ReactNode;
+  // eslint-disable-next-line react/require-default-props
+  mobileHeight?: string;
+  // eslint-disable-next-line react/require-default-props
+  hasBorder?: boolean;
 }
 
 function Button({
-  title, size, mode, onClick, fontSize = '0.875rem', children,
+  title, size, mode, onClick, fontSize = '0.875rem', mobileHeight = '32px', hasBorder = true, children,
 } : Props) {
   const [color, setColor] = useState<string[]>([]);
   const [width, setWidth] = useState<string>('');
@@ -69,6 +74,8 @@ function Button({
           $width={width}
           $color={color}
           $fontSize={fontSize}
+          $mobileHeight={mobileHeight}
+          $hasBorder={hasBorder}
           onClick={onClick}
         >
           {title}
@@ -81,10 +88,18 @@ function Button({
 
 export default Button;
 
-const StyledButton = styled.button<{ $color: string[]; $width: string; $fontSize: string; }>`
+interface IStyledButton {
+  $color: string[];
+  $width: string;
+  $fontSize: string;
+  $mobileHeight: string;
+  $hasBorder: boolean
+}
+
+const StyledButton = styled.button<IStyledButton>`
   background-color: ${({ $color }) => $color[0]};
   color: ${({ $color }) => $color[1]};
-  border: 1px solid ${({ $color }) => $color[2]};
+  border: ${({ $hasBorder, $color }) => ($hasBorder ? `1px solid ${$color[2]}` : null)};
 
   &:hover {
     opacity: 0.8;
@@ -101,7 +116,8 @@ const StyledButton = styled.button<{ $color: string[]; $width: string; $fontSize
   align-items: center;
 
   @media all and (max-width: 767px) {
-    width: 100%;
-    height: 32px;
+    width: 100%; 
+    height: ${({ $mobileHeight }) => $mobileHeight};
+    font-size: 0.875rem;
   }
 `;
