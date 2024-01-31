@@ -29,7 +29,7 @@ function ArticleCard(props : Props) {
           </div>
         )}
       </ImageContainer>
-      <div>
+      <div className="w-full px-[6px]">
         <p className="category">{category[0]}<span className="text-line">|</span>{category[1]}</p>
         <h3 onClick={onClick} className="title">
           {title}
@@ -44,7 +44,7 @@ function ArticleCard(props : Props) {
 export default ArticleCard;
 
 const StyledLi = styled.li<{ $mode: string }>`
-  width: 282px;
+  width: 100%;
   height: 393px;
   padding: 17px 17px 16px 17px;
   border: 1px solid var(--black-300);
@@ -68,7 +68,7 @@ const StyledLi = styled.li<{ $mode: string }>`
   }
 
   .title {
-    width: 236px;
+    width: 100%;
     color: ${({ $mode }) => ($mode === 'read' ? 'var(--black-500)' : 'var(--black-900)')};
     font-size: 1rem;
     font-weight: 600;
@@ -94,7 +94,7 @@ const StyledLi = styled.li<{ $mode: string }>`
 
 const ImageContainer = styled.div<{ $percent?: string, $mode: string }>`
   position: relative;
-  width: 248px;
+  width: 100%;
   height: 248px;
   border-radius: 16px;
   overflow: hidden;
