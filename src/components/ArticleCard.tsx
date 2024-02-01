@@ -29,7 +29,7 @@ function ArticleCard(props : Props) {
           </div>
         )}
       </ImageContainer>
-      <div className="w-full px-[6px]">
+      <div className="content-box">
         <p className="category">{category[0]}<span className="text-line">|</span>{category[1]}</p>
         <h3 onClick={onClick} className="title">
           {title}
@@ -90,6 +90,25 @@ const StyledLi = styled.li<{ $mode: string }>`
     font-weight: 300;
     padding-top: 14px;
   }
+
+  .content-box {
+    padding: 0px 6px 0 6px;
+  }
+
+  @media all and (max-width: 767px) {
+    height: 312px;
+    padding: 12px;
+    border-radius: 12px;
+    .category {
+      padding-top: 10px;
+    }
+    .date {
+      padding-top: 8px;
+    }
+    .content-box {
+      padding: 0px 4px 0 4px;
+    }
+  }
 `;
 
 const ImageContainer = styled.div<{ $percent?: string, $mode: string }>`
@@ -129,6 +148,11 @@ const ImageContainer = styled.div<{ $percent?: string, $mode: string }>`
     width: ${({ $percent }) => $percent || '0'};
     height: 8px;
     background-color: var(--primary)
+  }
+
+  @media all and (max-width: 767px) {
+    height: 184px;
+    border-radius: 10px;
   }
 `;
 
