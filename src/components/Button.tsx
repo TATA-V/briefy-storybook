@@ -32,6 +32,9 @@ function Button({
       case 'lineBlack':
         setColor([themes.colors.white, themes.colors.black900, themes.colors.black900]);
         break;
+      case 'lineGray':
+        setColor([themes.colors.white, themes.colors.black500, themes.colors.black500]);
+        break;
       case 'blue':
         setColor([themes.colors.primary, themes.colors.white, themes.colors.primary]);
         break;

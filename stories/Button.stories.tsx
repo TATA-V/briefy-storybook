@@ -15,7 +15,7 @@ export const Primary = {
   },
   argTypes: {
     mode: {
-      options: ['lineBlue', 'lineBlack', 'blue', 'black', 'disabled'],
+      options: ['lineBlue', 'lineBlack', 'lineGray', 'blue', 'black', 'disabled'],
       control: { type: 'radio' },
     },
     size: {
