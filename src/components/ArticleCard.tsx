@@ -92,6 +92,7 @@ const StyledLi = styled.li<{ $mode: string }>`
   }
 
   .content-box {
+    width: 100%;
     padding: 0px 6px 0 6px;
   }
 

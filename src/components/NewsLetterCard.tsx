@@ -26,7 +26,6 @@ function NewsLetterCard({
 export default NewsLetterCard;
 
 const NewsLetterCardBlock = styled.div`
-  max-width: 384px;
   width: 100%;
   height: 156px;
   border-radius: 20px;
