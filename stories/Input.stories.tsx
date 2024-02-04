@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+// import { ChangeEvent } from 'react';
 import Input from '../src/components/Input';
 
 export default {
@@ -13,7 +13,7 @@ export const Primary = {
     mode: 'blue',
     placeholder: '타이틀',
     // eslint-disable-next-line no-console
-    onChange: (e: ChangeEvent<HTMLInputElement>) => console.log(e.target.value),
+    // onChange: (e: ChangeEvent<HTMLInputElement>) => console.log(e.target.value),
   },
   argTypes: {
     mode: {

@@ -5,13 +5,12 @@ import { themes } from '../themes';
 interface Props {
   type: string;
   mode: string;
-  placeholder: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
 }
 
-function Input({
-  type, mode, placeholder, onChange,
-} : Props) {
+function Input({ type, mode, placeholder, onChange, value } : Props) {
   const [color, setColor] = useState<string[]>([]);
 
   useEffect(() => {
@@ -34,7 +33,14 @@ function Input({
   }, [mode]);
 
   return (
-    <StyledInput $color={color} type={type} onChange={onChange} placeholder={placeholder} />
+    <StyledInput
+      $color={color}
+      type={type}
+      onChange={onChange}
+      placeholder={placeholder}
+      disabled={mode === 'gray2'}
+      value={value}
+    />
   );
 }
 
@@ -56,5 +62,11 @@ const StyledInput = styled.input<{ $color: string[] }>`
 
   &::placeholder {
     color: #B3B4B9;
+  }
+
+  @media all and (max-width: 767px) {
+    width: 100%;
+    height: 38px;
+    padding: 0 0 0 12px;
   }
 `;
