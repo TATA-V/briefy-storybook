@@ -16,11 +16,12 @@ import FoodIcon from '../assets/icons/FoodIcon';
 interface Props {
   title: string;
   onClick: (title: string) => void;
+  selected?: boolean;
 }
 
-function Interest({ title, onClick } : Props) {
+function Interest({ title, onClick, selected = false } : Props) {
   const [icon, setIcon] = useState<ReactNode>();
-  const [clicked, setClicked] = useState<boolean>(false);
+  const [clicked, setClicked] = useState<boolean>(selected);
 
   useEffect(() => {
     switch (title) {
