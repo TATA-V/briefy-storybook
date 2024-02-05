@@ -51,7 +51,7 @@ const StyledInput = styled.input<{ $color: string[] }>`
   caret-color: ${({ $color }) => $color[1]};
   background-color: ${({ $color }) => $color[0]};
 
-  width: 358px;
+  width: 100%;
   height: 48px;
   color: #1C1C1E;
   font-size: 0.874rem;
@@ -65,7 +65,6 @@ const StyledInput = styled.input<{ $color: string[] }>`
   }
 
   @media all and (max-width: 767px) {
-    width: 100%;
     height: 38px;
     padding: 0 0 0 12px;
   }
