@@ -8,9 +8,11 @@ interface Props {
   placeholder?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   value?: string;
+  height?: string;
+  mobileHeight?:string;
 }
 
-function Input({ type, mode, placeholder, onChange, value } : Props) {
+function Input({ type, mode, placeholder, onChange, value, height = '48px', mobileHeight = '38px' } : Props) {
   const [color, setColor] = useState<string[]>([]);
 
   useEffect(() => {
@@ -35,6 +37,8 @@ function Input({ type, mode, placeholder, onChange, value } : Props) {
   return (
     <StyledInput
       $color={color}
+      $height={height}
+      $mobileHeight={mobileHeight}
       type={type}
       onChange={onChange}
       placeholder={placeholder}
@@ -46,13 +50,13 @@ function Input({ type, mode, placeholder, onChange, value } : Props) {
 
 export default Input;
 
-const StyledInput = styled.input<{ $color: string[] }>`
+const StyledInput = styled.input<{ $color: string[]; $height: string; $mobileHeight: string; }>`
   border: 1px solid ${({ $color }) => $color[1]};
   caret-color: ${({ $color }) => $color[1]};
   background-color: ${({ $color }) => $color[0]};
 
   width: 100%;
-  height: 48px;
+  height: ${({ $height }) => $height};
   color: #1C1C1E;
   font-size: 0.874rem;
   font-weight: 400;
@@ -65,7 +69,7 @@ const StyledInput = styled.input<{ $color: string[] }>`
   }
 
   @media all and (max-width: 767px) {
-    height: 38px;
+    height: ${({ $mobileHeight }) => $mobileHeight} ;
     padding: 0 0 0 12px;
   }
 `;
