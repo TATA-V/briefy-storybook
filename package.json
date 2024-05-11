@@ -1,5 +1,6 @@
 {
   "name": "briefy-design",
+  "homepage": "https://TATA-V.github.io/briefy-storybook/",
   "version": "1.1.8",
   "description": "",
   "main": "index.js",
@@ -7,7 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
-    "tsc-build": "tsc -p tsconfig.json"
+    "tsc-build": "tsc -p tsconfig.json",
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static",
+    "build-storybook": "build-storybook"
   },
   "keywords": [],
   "author": {
@@ -34,6 +38,7 @@
     "@types/styled-components": "^5.1.34",
     "autoprefixer": "^10.4.16",
     "css-loader": "^6.8.1",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.32",
     "postcss-loader": "^7.3.4",
     "prop-types": "^15.8.1",
