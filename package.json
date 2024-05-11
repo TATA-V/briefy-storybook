@@ -9,9 +9,7 @@
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
     "tsc-build": "tsc -p tsconfig.json",
-    "predeploy": "npm run build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static",
-    "build-storybook": "build-storybook"
+    "storybook:publish": "pnpm build && touch ./storybook-static/.nojekyll && gh-pages -d ./storybook-static -t true"
   },
   "keywords": [],
   "author": {
