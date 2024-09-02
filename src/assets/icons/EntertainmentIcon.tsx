@@ -13,7 +13,7 @@ function EntertainmentIcon() {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
-export default EntertainmentIcon
+export default EntertainmentIcon;

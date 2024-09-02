@@ -1,18 +1,19 @@
 import styled from 'styled-components';
 
 interface Props {
+  src: string;
   title: string;
   category: string;
   description: string;
   onClick: () => void;
 }
 function NewsLetterCard({
-  title, category, description, onClick,
+  src, title, category, description, onClick,
 } : Props) {
   return (
     <NewsLetterCardBlock>
       <ImageContainer onClick={onClick}>
-        <img src="https://ifh.cc/g/t5Z7ol.jpg" alt="news-img" loading="lazy" />
+        <img src={src} alt="news-img" loading="lazy" />
       </ImageContainer>
       <Content onClick={onClick}>
         <h3 className="title">{title}</h3>
