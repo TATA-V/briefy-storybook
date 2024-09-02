@@ -1,4 +1,4 @@
-import{j as o,a as e,u as i}from"./styled-components.browser.esm-91a9bef8.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";function r({title:a,category:u,description:p,onClick:n}){return o(c,{children:[e(m,{onClick:n,children:e("img",{src:"https://ifh.cc/g/t5Z7ol.jpg",alt:"news-img",loading:"lazy"})}),o(C,{onClick:n,children:[e("h3",{className:"title",children:a}),e("p",{className:"category",children:u}),e("p",{className:"description",children:p})]})]})}const c=i.div`
+import{j as o,a as e,u as i}from"./styled-components.browser.esm-91a9bef8.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";function r({src:a,title:u,category:c,description:p,onClick:n}){return o(m,{children:[e(C,{onClick:n,children:e("img",{src:a,alt:"news-img",loading:"lazy"})}),o(h,{onClick:n,children:[e("h3",{className:"title",children:u}),e("p",{className:"category",children:c}),e("p",{className:"description",children:p})]})]})}const m=i.div`
   width: 100%;
   height: 156px;
   border-radius: 20px;
@@ -13,7 +13,7 @@ import{j as o,a as e,u as i}from"./styled-components.browser.esm-91a9bef8.js";im
     border-radius: 10px;
     padding: 10px;
   }
-`,m=i.div`
+`,C=i.div`
   min-width: 124px;
   height: 124px;
   border-radius: 16px;
@@ -38,7 +38,7 @@ import{j as o,a as e,u as i}from"./styled-components.browser.esm-91a9bef8.js";im
       height: 80px;
     }
   }
-`,C=i.div`
+`,h=i.div`
   width: 100%;
   padding-left: 12px;
   cursor: pointer;
@@ -86,11 +86,12 @@ import{j as o,a as e,u as i}from"./styled-components.browser.esm-91a9bef8.js";im
       font-size: 0.7rem;
     }
   }
-`;try{r.displayName="NewsLetterCard",r.__docgenInfo={description:"",displayName:"NewsLetterCard",props:{title:{defaultValue:null,description:"",name:"title",required:!0,type:{name:"string"}},category:{defaultValue:null,description:"",name:"category",required:!0,type:{name:"string"}},description:{defaultValue:null,description:"",name:"description",required:!0,type:{name:"string"}},onClick:{defaultValue:null,description:"",name:"onClick",required:!0,type:{name:"() => void"}}}}}catch{}const w={title:"CardStyle/NewsLetterCard",component:r,tags:["autodocs"]},t={args:{title:"뉴닉",category:"경제",description:"시간이 없어도 세상은 궁금하니까! 세상 돌아가는 소식을 쉽고 재미있게 받아보세요",onClick:()=>alert("클릭!")}};var d,s,l;t.parameters={...t.parameters,docs:{...(d=t.parameters)==null?void 0:d.docs,source:{originalSource:`{
+`;try{r.displayName="NewsLetterCard",r.__docgenInfo={description:"",displayName:"NewsLetterCard",props:{src:{defaultValue:null,description:"",name:"src",required:!0,type:{name:"string"}},title:{defaultValue:null,description:"",name:"title",required:!0,type:{name:"string"}},category:{defaultValue:null,description:"",name:"category",required:!0,type:{name:"string"}},description:{defaultValue:null,description:"",name:"description",required:!0,type:{name:"string"}},onClick:{defaultValue:null,description:"",name:"onClick",required:!0,type:{name:"() => void"}}}}}catch{}const f={title:"CardStyle/NewsLetterCard",component:r,tags:["autodocs"]},t={args:{src:"https://nabxomdrieosmaactvvc.supabase.co/storage/v1/object/public/briefy/snow.jpeg",title:"뉴닉",category:"경제",description:"시간이 없어도 세상은 궁금하니까! 세상 돌아가는 소식을 쉽고 재미있게 받아보세요",onClick:()=>alert("클릭!")}};var s,d,l;t.parameters={...t.parameters,docs:{...(s=t.parameters)==null?void 0:s.docs,source:{originalSource:`{
   args: {
+    src: 'https://nabxomdrieosmaactvvc.supabase.co/storage/v1/object/public/briefy/snow.jpeg',
     title: '뉴닉',
     category: '경제',
     description: '시간이 없어도 세상은 궁금하니까! 세상 돌아가는 소식을 쉽고 재미있게 받아보세요',
     onClick: () => alert('클릭!')
   }
-}`,...(l=(s=t.parameters)==null?void 0:s.docs)==null?void 0:l.source}}};const f=["Primary"];export{t as Primary,f as __namedExportsOrder,w as default};
+}`,...(l=(d=t.parameters)==null?void 0:d.docs)==null?void 0:l.source}}};const b=["Primary"];export{t as Primary,b as __namedExportsOrder,f as default};
