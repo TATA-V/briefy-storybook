@@ -20,8 +20,6 @@ interface Props {
 function Button({
   title, size, mode, onClick, fontSize = '0.875rem', mobileHeight = '32px', hasBorder = true, children,
 } : Props) {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-
   const color = useMemo(() => {
     switch (mode) {
       case 'lineBlue':
@@ -56,20 +54,18 @@ function Button({
 
   return (
     <>
-      {isVisible && (
-        <StyledButton
-          disabled={mode === 'disabled'}
-          $width={width}
-          $color={color}
-          $fontSize={fontSize}
-          $mobileHeight={mobileHeight}
-          $hasBorder={hasBorder}
-          onClick={onClick}
-        >
-          {title}
-          {children}
-        </StyledButton>
-      )}
+      <StyledButton
+        disabled={mode === 'disabled'}
+        $width={width}
+        $color={color}
+        $fontSize={fontSize}
+        $mobileHeight={mobileHeight}
+        $hasBorder={hasBorder}
+        onClick={onClick}
+      >
+        {title}
+        {children}
+      </StyledButton>
     </>
   );
 }
