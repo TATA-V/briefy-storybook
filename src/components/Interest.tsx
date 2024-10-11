@@ -1,6 +1,4 @@
-import {
-  useEffect, useState, ReactNode,
-} from 'react';
+import { useState, useMemo } from 'react';
 import styled from 'styled-components';
 import BusinessIcon from '../assets/icons/BusinessIcon';
 import TechniqueIcon from '../assets/icons/TechniqueIcon';
@@ -20,43 +18,32 @@ interface Props {
 }
 
 function Interest({ title, onClick, selected = false } : Props) {
-  const [icon, setIcon] = useState<ReactNode>();
   const [clicked, setClicked] = useState<boolean>(selected);
 
-  useEffect(() => {
+  const icon = useMemo(() => {
     switch (title) {
       case '비지니스':
-        setIcon(<BusinessIcon />);
-        return;
+        return <BusinessIcon />;
       case '기술':
-        setIcon(<TechniqueIcon />);
-        return;
+        return <TechniqueIcon />;
       case '건강':
-        setIcon(<HealthIcon />);
-        return;
+        return <HealthIcon />;
       case '엔터테이먼트':
-        setIcon(<EntertainmentIcon />);
-        return;
+        return <EntertainmentIcon />;
       case '스포츠':
-        setIcon(<SportsIcon />);
-        return;
+        return <SportsIcon />;
       case '환경':
-        setIcon(<EnvironmentIcon />);
-        return;
+        return <EnvironmentIcon />;
       case '과학':
-        setIcon(<ScienceIcon />);
-        return;
+        return <ScienceIcon />;
       case '여행':
-        setIcon(<TravelIcon />);
-        return;
+        return <TravelIcon />;
       case '미디어':
-        setIcon(<MediaIcon />);
-        return;
+        return <MediaIcon />;
       case '푸드':
-        setIcon(<FoodIcon />);
-        return;
+        return <FoodIcon />;
       default:
-        setIcon(<BusinessIcon />);
+        return <BusinessIcon />;
     }
   }, [title]);
 

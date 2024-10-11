@@ -1,4 +1,4 @@
-import { useEffect, useState, ChangeEvent } from 'react';
+import { ChangeEvent, useMemo } from 'react';
 import styled from 'styled-components';
 import { themes } from '../themes';
 
@@ -13,24 +13,18 @@ interface Props {
 }
 
 function Input({ type, mode, placeholder, onChange, value, height = '48px', mobileHeight = '38px' } : Props) {
-  const [color, setColor] = useState<string[]>([]);
-
-  useEffect(() => {
+  const color = useMemo(() => {
     switch (mode) {
       case 'blue':
-        setColor([themes.colors.white, themes.colors.primary]);
-        return;
+        return [themes.colors.white, themes.colors.primary];
       case 'red':
-        setColor([themes.colors.white, themes.colors.warning]);
-        return;
+        return [themes.colors.white, themes.colors.warning];
       case 'gray':
-        setColor([themes.colors.white, themes.colors.black300]);
-        return;
+        return [themes.colors.white, themes.colors.black300];
       case 'gray2':
-        setColor([themes.colors.black100, themes.colors.black300]);
-        return;
+        return [themes.colors.black100, themes.colors.black300];
       default:
-        setColor([themes.colors.white, themes.colors.primary]);
+        return [themes.colors.white, themes.colors.primary];
     }
   }, [mode]);
 

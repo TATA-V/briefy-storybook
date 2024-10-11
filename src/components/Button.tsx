@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { themes } from '../themes';
 
@@ -20,52 +20,37 @@ interface Props {
 function Button({
   title, size, mode, onClick, fontSize = '0.875rem', mobileHeight = '32px', hasBorder = true, children,
 } : Props) {
-  const [color, setColor] = useState<string[]>([]);
-  const [width, setWidth] = useState<string>('');
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  useEffect(() => {
+  const color = useMemo(() => {
     switch (mode) {
       case 'lineBlue':
-        setColor([themes.colors.white, themes.colors.primary, themes.colors.primary]);
-        break;
+        return [themes.colors.white, themes.colors.primary, themes.colors.primary];
       case 'lineBlack':
-        setColor([themes.colors.white, themes.colors.black900, themes.colors.black900]);
-        break;
-      case 'lineGray':
-        setColor([themes.colors.white, themes.colors.black500, themes.colors.black500]);
-        break;
+        return [themes.colors.white, themes.colors.black900, themes.colors.black900];
       case 'blue':
-        setColor([themes.colors.primary, themes.colors.white, themes.colors.primary]);
-        break;
+        return [themes.colors.primary, themes.colors.white, themes.colors.primary];
       case 'black':
-        setColor([themes.colors.black900, themes.colors.white, themes.colors.black900]);
-        break;
+        return [themes.colors.black900, themes.colors.white, themes.colors.black900];
       case 'disabled':
-        setColor([themes.colors.black100, themes.colors.black300, themes.colors.black300]);
-        break;
+        return [themes.colors.black100, themes.colors.black300, themes.colors.black300];
       default:
-        setColor([themes.colors.white, themes.colors.primary, themes.colors.primary]);
+        return [themes.colors.white, themes.colors.primary, themes.colors.primary];
     }
-    setIsVisible(true);
   }, [mode]);
 
-  useEffect(() => {
+  const width = useMemo(() => {
     switch (size) {
       case 'big':
-        setWidth('358px');
-        return;
+        return '358px';
       case 'middle':
-        setWidth('280px');
-        return;
+        return '280px';
       case 'small':
-        setWidth('160px');
-        return;
+        return '160px';
       case 'extraSmall':
-        setWidth('131px');
-        return;
+        return '131px';
       default:
-        setWidth('358px');
+        return '358px';
     }
   }, [size]);
 

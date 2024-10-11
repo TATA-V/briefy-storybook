@@ -66,7 +66,7 @@ function MainPage() {
         data={{
           category: ['뉴닉', '경제'],
           title: '이스라엘-팔레스타인 하마스 전쟁 (8) : 지상편과 휴전',
-          src: 'https://ifh.cc/g/t5Z7ol.jpg',
+          src: '이미지경로',
           percent: '75%',
         }}
         mode="unread"
@@ -84,6 +84,7 @@ import { NewsLetterCard } from 'briefy-design'
 function MainPage() {
   return (
       <NewsLetterCard
+        src="이미지경로"
         title="뉴닉"
         category="경제"
         description="시간이 없어도 세상은 궁금하니까! 세상 돌아가는 소식을 쉽고 재미있게 받아보세요"
