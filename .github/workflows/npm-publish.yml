@@ -28,15 +28,21 @@ jobs:
         npm i -g pnpm
         pnpm i
         pnpm build
-        
+
     - name: global config
       run: |
         git config --global user.email "tatahyeonv@gmail.com"
         git config --global user.name "tatahyeonv"
 
+    - name: Commit pending changes (if any)
+      run: |
+        git add -A
+        git diff --cached --quiet || git commit -m "chore: commit pending changes before version bump"
+    
     - name: auto version update
       run: |
         npm version patch
+    
     - uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_author: Actions Bot <actions@github.com>
